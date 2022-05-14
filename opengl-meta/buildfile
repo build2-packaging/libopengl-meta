@@ -45,26 +45,26 @@ lib{opengl-gl}:
     c.export.libs = $opengl_gl_libs
 }
 
-[rule_hint=c] lib{opengl-glu}: lib{opengl-gl}
+[rule_hint=c] lib{opengl-glu}:
 lib{opengl-glu}:
 {
-    c.export.libs = $opengl_glu_libs
+    c.export.libs = $opengl_gl_libs $opengl_glu_libs
 }
 
-[rule_hint=c] lib{opengl-glut}: lib{opengl-glu}
+[rule_hint=c] lib{opengl-glut}:
 lib{opengl-glut}:
 {
-    c.export.libs = $opengl_glut_libs
+    c.export.libs = $opengl_gl_libs $opengl_glu_libs $opengl_glut_libs
 }
 
-[rule_hint=c] lib{opengl-egl}: lib{opengl-gl}
+[rule_hint=c] lib{opengl-egl}:
 lib{opengl-egl}:
 {
-    c.export.libs = $opengl_egl_libs
+    c.export.libs = $opengl_gl_libs $opengl_egl_libs
 }
 
-[rule_hint=c] lib{opengl-gles}: lib{opengl-egl}
-lib{opengl-egl}:
+[rule_hint=c] lib{opengl-gles}:
+lib{opengl-gles}:
 {
-    c.export.libs = $opengl_gles_libs
+    c.export.libs = $opengl_gl_libs $opengl_egl_libs $opengl_gles_libs
 }
