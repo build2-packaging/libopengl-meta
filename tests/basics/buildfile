@@ -1,0 +1,6 @@
+import opengl_glut_libs = opengl-meta%lib{opengl-glut}
+import opengl_gles_libs = opengl-meta%lib{opengl-gles}
+
+exe{driver_glut}: c{driver_glut} $opengl_glut_libs
+
+exe{driver_gles}: c{driver_gles} $opengl_gles_libs

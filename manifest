@@ -1,0 +1,15 @@
+: 1
+name: opengl-meta
+version: 1.0.0-a.0.z
+project: opengl-meta
+summary: Meta package to use OpenGL.
+license: MIT
+description-file: README.md
+topics: C++, OpenGL
+url: https://www.opengl.org/
+doc-url: https://www.khronos.org/opengl/
+package-url: https://github.com/build2-packaging/opengl-meta
+package-email: rookfighter@posteo.org
+builds: default
+depends: * build2 >= 0.15.0-
+depends: * bpkg >= 0.15.0-

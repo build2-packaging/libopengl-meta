@@ -1,0 +1,70 @@
+opengl_gl_libs =
+opengl_glu_libs =
+opengl_glut_libs =
+opengl_egl_libs =
+opengl_gles_libs =
+
+switch $cxx.target.class
+{
+    case 'windows'
+    {
+        if ($cxx.target.system == 'mingw32')
+        {
+            opengl_gl_libs += -lopengl32
+            opengl_glu_libs += -lglu32
+            opengl_glut_libs += -lglut32
+        }
+        else
+        {
+            opengl_gl_libs += opengl32.lib
+            opengl_glu_libs += glu32.lib
+            opengl_glut_libs += glut32.lib
+        }
+    }
+    case 'macos'
+    {
+        opengl_gl_libs += -framework OpenGL
+        opengl_glut_libs += -framework GLUT
+        opengl_gles_libs += -framework OpenGLES
+    }
+    case 'linux'
+    case 'bsd'
+    default
+    {
+        opengl_gl_libs += -lGL
+        opengl_glu_libs += -lGLU
+        opengl_glut_libs += -lglut
+        opengl_egl_libs += -lEGL
+        opengl_gles_libs += -lGLESv1_CM
+    }
+}
+
+[rule_hint=c] lib{opengl-gl}:
+lib{opengl-gl}:
+{
+    c.export.libs = $opengl_gl_libs
+}
+
+[rule_hint=c] lib{opengl-glu}: lib{opengl-gl}
+lib{opengl-glu}:
+{
+    c.export.libs = $opengl_glu_libs
+}
+
+[rule_hint=c] lib{opengl-glut}: lib{opengl-glu}
+lib{opengl-glut}:
+{
+    c.export.libs = $opengl_glut_libs
+}
+
+[rule_hint=c] lib{opengl-egl}: lib{opengl-gl}
+lib{opengl-egl}:
+{
+    c.export.libs = $opengl_egl_libs
+}
+
+[rule_hint=c] lib{opengl-gles}: lib{opengl-egl}
+lib{opengl-egl}:
+{
+    c.export.libs = $opengl_gles_libs
+}
