@@ -4,11 +4,11 @@ opengl_glut_libs =
 opengl_egl_libs =
 opengl_gles_libs =
 
-switch $cxx.target.class
+switch $c.target.class
 {
     case 'windows'
     {
-        if ($cxx.target.system == 'mingw32')
+        if ($c.target.system == 'mingw32')
         {
             opengl_gl_libs = -lopengl32
             opengl_glu_libs = -lglu32

@@ -18,11 +18,9 @@ jobs:
           - name: Ubuntu gcc
             os: ubuntu-latest
             compiler_cc: gcc
-            compiler_cxx: g++
           - name: Ubuntu clang
             os: ubuntu-latest
             compiler_cc: clang
-            compiler_cxx: clang++
 
     steps:
       - uses: actions/checkout@v3
@@ -34,6 +32,6 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y libx11-dev libxrandr-dev libudev-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev libegl-dev libgles-dev libglew-dev
       - name: Configure
-        run: bdep init -C @${{matrix.config.compiler_cc}} cc config.cxx=${{matrix.config.compiler_cxx}}
+        run: bdep init -C @${{matrix.config.compiler_cc}} cc config.c=${{matrix.config.compiler_cc}}
       - name: Build
         run: b -V
