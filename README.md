@@ -1,4 +1,4 @@
-# SFML Build2 Package
+# OpenGL Build2 Package
 
 [![build2](https://github.com/build2-packaging/opengl-meta/actions/workflows/build2.yml/badge.svg)](https://github.com/build2-packaging/opengl-meta/actions/workflows/build2.yml)
 
