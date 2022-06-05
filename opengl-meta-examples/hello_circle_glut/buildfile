@@ -1,0 +1,7 @@
+import impl_libs = opengl-meta%lib{opengl-gl}
+import impl_libs += opengl-meta%lib{opengl-glu}
+import impl_libs += opengl-meta%lib{opengl-glut}
+
+c.libs += -lm
+
+./: exe{hello_circle_glut}: c{*} $impl_libs

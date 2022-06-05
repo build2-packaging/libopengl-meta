@@ -1,1 +1,2 @@
-./: {*/ -build/} doc{README.md} legal{LICENSE.txt} manifest
+import pkgs = {opengl-meta*/}
+./: $pkgs
