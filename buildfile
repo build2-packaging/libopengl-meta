@@ -1,2 +1,2 @@
-import pkgs = {opengl-meta*/}
+import pkgs = {libopengl-meta*/}
 ./: $pkgs

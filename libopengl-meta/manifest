@@ -1,8 +1,8 @@
 : 1
-name: opengl-meta
+name: libopengl-meta
 version: 1.0.0-a.0.z
 project: opengl-meta
-summary: Meta package to use OpenGL.
+summary: OpenGL meta package.
 license: MIT
 description-file: README.md
 topics: C++, OpenGL

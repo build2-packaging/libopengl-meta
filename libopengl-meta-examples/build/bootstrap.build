@@ -1,4 +1,4 @@
-project = opengl-meta-examples
+project = libopengl-meta-examples
 
 using version
 using config

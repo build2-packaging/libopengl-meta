@@ -1,4 +1,4 @@
 : 1
-location: opengl-meta/
+location: libopengl-meta/
 :
-location: opengl-meta-examples/
+location: libopengl-meta-examples/

@@ -1,6 +1,0 @@
-$out_root/
-{
-  include opengl-meta/
-}
-
-export $out_root/opengl-meta/$import.target

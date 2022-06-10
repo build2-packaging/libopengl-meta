@@ -11,20 +11,20 @@ The packaging code is licensed under the MIT License.
 You can simply add this package as dependency to your project by specifying it in your `manifest`:
 
 ```
-depends: opengl-meta ^1.0.0
+depends: libopengl-meta ^1.0.0
 ```
 
 Then just pick the targets that you need:
 
 ```
 # just OpenGL
-import opengl_gl_libs = opengl-meta%lib{opengl-gl}
+import opengl_gl_libs = libopengl-meta%lib{opengl-gl}
 # OpenGL GLU
-import opengl_glu_libs = opengl-meta%lib{opengl-glu}
+import opengl_glu_libs = libopengl-meta%lib{opengl-glu}
 # OpenGL GLUT
-import opengl_glut_libs = opengl-meta%lib{opengl-glut}
+import opengl_glut_libs = libopengl-meta%lib{opengl-glut}
 # OpenGL EGL
-import opengl_egl_libs = opengl-meta%lib{opengl-egl}
+import opengl_egl_libs = libopengl-meta%lib{opengl-egl}
 # OpenGL GLES
-import opengl_gles_libs = opengl-meta%lib{opengl-gles}
+import opengl_gles_libs = libopengl-meta%lib{opengl-gles}
 ```

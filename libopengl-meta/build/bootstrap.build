@@ -1,4 +1,4 @@
-project = opengl-meta
+project = libopengl-meta
 
 using version
 using config

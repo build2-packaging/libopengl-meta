@@ -1,8 +1,8 @@
 : 1
-name: opengl-meta-examples
+name: libopengl-meta-examples
 version: 1.0.0-a.0.z
 project: opengl-meta
-summary: Examples on how to use the vulkan-meta package.
+summary: Examples on how to use the libopengl-meta package.
 license: MIT
 description-file: README.md
 topics: C++, OpenGL
@@ -14,4 +14,4 @@ builds: default
 
 depends: * build2 >= 0.15.0-
 depends: * bpkg >= 0.15.0-
-depends: opengl-meta == $
+depends: libopengl-meta == $
