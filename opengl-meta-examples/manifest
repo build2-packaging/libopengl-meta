@@ -9,9 +9,9 @@ topics: C++, OpenGL
 url: https://www.opengl.org/
 doc-url: https://www.khronos.org/opengl/
 package-url: https://github.com/build2-packaging/libopengl-meta
-package-email: rookfighter@posteo.org
+package-email: packaging@build2.org ; Mailing list.
 builds: default
 
-depends: * build2 >= 0.15.0-
-depends: * bpkg >= 0.15.0-
+depends: * build2 >= 0.15.0
+depends: * bpkg >= 0.15.0
 depends: libopengl-meta == $
