@@ -1,0 +1,3 @@
+import libs = libopengl-meta%lib{opengl-glu}
+
+exe{driver}: {h c}{**} $libs testscript{**}
