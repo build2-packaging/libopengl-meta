@@ -34,6 +34,61 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y libx11-dev libxrandr-dev libudev-dev libglu1-mesa-dev freeglut3-dev mesa-common-dev libegl-dev libgles-dev libglew-dev
       - name: Configure
-        run: bdep init -C @${{matrix.config.compiler_cc}} cc config.c=${{matrix.config.compiler_cc}} cc
+        run: bdep init -C @cc cc config.c=${{matrix.config.compiler_cc}} cc
       - name: Build
         run: b -V
+      - name: Test
+        run: bdep test -V @cc
+
+  # Job for building on MacOS
+  MacOS:
+    name: ${{matrix.config.name}}
+    runs-on: ${{matrix.config.os}}
+    strategy:
+      matrix:
+        config:
+          - name: MacOS clang
+            os: macos-latest
+            compiler_cc: clang
+            compiler_cxx: clang++
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - uses: build2/setup-build2-github-action@v2
+      with:
+        build2-version: latest
+    - name: Configure
+      run: bdep init -C @cc cc config.cxx=${{matrix.config.compiler_cxx}}
+    - name: Build
+      run: b -V
+    - name: Test
+      run: bdep test -V @cc
+
+  # Job for building on Windows
+  Windows:
+    name: ${{matrix.config.name}}
+    runs-on: ${{matrix.config.os}}
+    strategy:
+      matrix:
+        config:
+            - name: Windows msvc
+              os: windows-latest
+              compiler_cc: msvc
+            - name: Windows clang
+              os: windows-latest
+              compiler_cc: clang
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - uses: build2/setup-build2-github-action@v2
+      with:
+        build2-version: latest
+        build2-windows-compiler: ${{matrix.config.compiler_cc}}
+    - name: Configure
+      run: bdep init -C ../vulkan-meta-cc @cc cc
+    - name: Build
+      run: b -V
+    - name: Test
+      run: bdep test -V @cc
