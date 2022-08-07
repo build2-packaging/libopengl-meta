@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include <GL/glu.h>
 
 // just create a non-static function to check if linking works
