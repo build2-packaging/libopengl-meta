@@ -1,1 +1,8 @@
-./: {*/ -build/} doc{README.md} legal{LICENSE.txt} manifest
+to_build = {*/ -build/ -hello_circle_glut/} doc{README.md} legal{LICENSE.txt} manifest
+
+if ($c.target.class != 'windows')
+{
+    to_build += {hello_circle_glut/}
+}
+
+./: $to_build
