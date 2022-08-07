@@ -4,4 +4,4 @@ import impl_libs += libopengl-meta%lib{opengl-glut}
 
 c.libs += -lm
 
-./: exe{hello_circle_glut}: c{*} $impl_libs
+exe{hello_circle_glut}: c{*} $impl_libs: include = ($c.target.class != 'windows')
