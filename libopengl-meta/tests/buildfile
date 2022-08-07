@@ -1,0 +1,8 @@
+to_build = {*/ -build/ -smoke_test_glut/}
+
+if ($c.target.class != 'windows')
+{
+    to_build += {smoke_test_glut/}
+}
+
+./: $to_build
