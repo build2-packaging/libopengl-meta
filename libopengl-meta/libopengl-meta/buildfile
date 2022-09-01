@@ -70,3 +70,5 @@ lib{opengl-gles}:
 {
     c.export.libs = $opengl_gles_libs
 }
+
+./: lib{opengl-gl} lib{opengl-glu} lib{opengl-glut} lib{opengl-egl} lib{opengl-gles}
