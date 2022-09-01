@@ -11,6 +11,7 @@ doc-url: https://www.khronos.org/opengl/
 package-url: https://github.com/build2-packaging/libopengl-meta
 package-email: packaging@build2.org ; Mailing list.
 builds: default
+examples: opengl-meta-examples == $
 
 depends: * build2 >= 0.15.0
 depends: * bpkg >= 0.15.0
