@@ -1,7 +1,7 @@
 : 1
-name: opengl-meta-examples
+name: libopengl-meta-examples
 version: 1.0.0
-project: opengl-meta
+project: libopengl-meta
 summary: Examples on how to use the libopengl-meta package.
 license: MIT
 description-file: README.md

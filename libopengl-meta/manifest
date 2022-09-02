@@ -1,7 +1,7 @@
 : 1
 name: libopengl-meta
 version: 1.0.0
-project: opengl-meta
+project: libopengl-meta
 summary: Meta package for OpenGL.
 license: MIT
 description-file: README.md
