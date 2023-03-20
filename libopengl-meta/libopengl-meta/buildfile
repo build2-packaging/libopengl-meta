@@ -44,30 +44,35 @@ switch $c.target.class
 [rule_hint=c] lib{opengl-gl}:
 lib{opengl-gl}:
 {
+    c.libs = $opengl_gl_libs
     c.export.libs = $opengl_gl_libs
 }
 
 [rule_hint=c] lib{opengl-glu}:
 lib{opengl-glu}:
 {
+    c.libs = $opengl_glu_libs
     c.export.libs = $opengl_glu_libs
 }
 
 [rule_hint=c] lib{opengl-glut}:
 lib{opengl-glut}:
 {
+    c.libs = $opengl_glut_libs
     c.export.libs = $opengl_glut_libs
 }
 
 [rule_hint=c] lib{opengl-egl}:
 lib{opengl-egl}:
 {
+    c.libs = $opengl_egl_libs
     c.export.libs = $opengl_egl_libs
 }
 
 [rule_hint=c] lib{opengl-gles}:
 lib{opengl-gles}:
 {
+    c.libs = $opengl_gles_libs
     c.export.libs = $opengl_gles_libs
 }
 
